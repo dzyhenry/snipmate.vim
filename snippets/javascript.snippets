@@ -14,7 +14,9 @@ snippet f
 	function(${1}) {${2}};
 # if
 snippet if
-	if (${1:true}) {${2}}
+	if (${1:true}) {
+		${2}
+	}
 # if ... else
 snippet ife
 	if (${1:true}) {${2}}
@@ -72,3 +74,6 @@ snippet get
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
+# Console log
+snippet log
+	console.log(${1});
