@@ -10,3 +10,4 @@ If you have installed pathogen, juse clone the repositoty to your .vim/bundle/ d
 2. update for loop  [javascript.snippets]
 3. append javascript.snippets content  to html.snippets [html.snippets]
 4. remove the ';' of 'for loop' [javascript.snippets]
+5. add h5 to html [html.snippets]
