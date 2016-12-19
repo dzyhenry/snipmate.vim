@@ -59,7 +59,7 @@ snippet *
 snippet react
 	import React, { Component, PropTypes } from 'react';
 	
-	class ${1} extends Component {
+	class ${1:component_name} extends Component {
 		componentDidMount() {
 			
 		}
@@ -69,28 +69,28 @@ snippet react
 			);
 		}
 	}
-	${2: $1}.propTypes = {
+	${2:$1}.propTypes = {
 	};
 
 snippet reactf
 	import React, { PropTypes } from 'react';
 
-	const ${1} = (props) =>
+	const ${1:component_name} = (props) =>
 	(
 	);
 
-	${2: $1}.propTypes = {
+	${2:$1}.propTypes = {
 	};
 
 snippet reactfun
 	import React, { PropTypes } from 'react';
 
-	const ${1: funcname} = (props) => {
+	const ${1:component_name} = (props) => {
 		return (
 		);
 	}
 
-	${2: $1}.propTypes = {
+	${2:$1}.propTypes = {
 	};
 
 snippet reducer
@@ -109,11 +109,11 @@ snippet reducer
 
 # sync action
 snippet action
-	const ${1} = (${2}) => ({ type: ${3}, payload: { ${4} } });
+	const ${1:action_name} = (${2}) => ({ type: ${3}, payload: { ${4} } });
 
 #aync action
 snippet aaction
-	const ${1} = (${2}) => (dispatch, getState) => {
+	const ${1:action_name} = (${2: }) => (dispatch, getState) => {
 		const ${3}State = getState().${4};
 		return dispatch(${5});
 	};
