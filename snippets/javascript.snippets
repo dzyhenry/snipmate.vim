@@ -85,7 +85,7 @@ snippet reactf
 snippet reactfun
 	import React, { PropTypes } from 'react';
 
-	const ${1} = (props) => {
+	const ${1: funcname} = (props) => {
 		return (
 		);
 	}
@@ -94,15 +94,27 @@ snippet reactfun
 	};
 
 snippet reducer
-	import ${1}_ACTION from '../constants';
+	import ${1:action_name}_ACTION from '../constants';
 
 	const initialState = {
 	};
 
 	export default (state = initialState, action) => {
 		const payload = action.payload;
-		if (action.type === ${2: $1}_ACTION && payload) {
+		if (action.type === ${2:$1}_ACTION && payload) {
 			return { ...state, ...payload };
 		}
 		return state;
 	}
+
+# sync action
+snippet action
+	const ${1} = (${2}) => ({ type: ${3}, payload: { ${4} } });
+
+#aync action
+snippet aaction
+	const ${1} = (${2}) => (dispatch, getState) => {
+		const ${3}State = getState().${4};
+		return dispatch(${5});
+	};
+
