@@ -94,7 +94,7 @@ snippet reactfun
 	};
 
 snippet reducer
-	import ${1:action_name}_ACTION from '../constants';
+	import {${1:action_name}_ACTION } from '../constants';
 
 	const initialState = {
 	};
@@ -109,11 +109,11 @@ snippet reducer
 
 # sync action
 snippet action
-	const ${1:action_name} = (${2}) => ({ type: ${3}, payload: { ${4} } });
+	export const ${1:action_name} = (${2}) => ({ type: ${3}, payload: { ${4} } });
 
 #aync action
 snippet aaction
-	const ${1:action_name} = (${2: }) => (dispatch, getState) => {
+	export const ${1:action_name} = (${2: }) => (dispatch, getState) => {
 		const ${3}State = getState().${4};
 		return dispatch(${5});
 	};
