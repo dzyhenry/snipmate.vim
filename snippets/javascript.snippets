@@ -58,6 +58,7 @@ snippet *
 # React related
 snippet react
 	import React, { Component, PropTypes } from 'react';
+	import { connect } from 'react-redux';
 	
 	class ${1:component_name} extends Component {
 		componentDidMount() {
@@ -69,8 +70,13 @@ snippet react
 			);
 		}
 	}
+
+	const {} = PropTypes;
+
 	${2:$1}.propTypes = {
 	};
+
+	export default connect()(${3:$1});
 
 snippet reactf
 	import React, { PropTypes } from 'react';
@@ -79,8 +85,12 @@ snippet reactf
 	(
 	);
 
+	const {} = PropTypes;
+
 	${2:$1}.propTypes = {
 	};
+
+	export default ${2:$1}
 
 snippet reactfun
 	import React, { PropTypes } from 'react';
@@ -92,6 +102,8 @@ snippet reactfun
 
 	${2:$1}.propTypes = {
 	};
+
+	export default ${3:$1}
 
 snippet reducer
 	import {${1:action_name}_ACTION } from '../constants';
