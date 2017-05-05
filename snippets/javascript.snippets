@@ -28,6 +28,11 @@ snippet forr
 	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3:--}) {
 		${4:$1[$2]}
 	}
+# for of statement
+snippet fof
+	for (const ${2:value} of ${1:obj}) {
+		${3}
+	}
 # while (...) {...}
 snippet wh
 	while (${1:/* condition */}) {
@@ -57,7 +62,8 @@ snippet *
 
 # React related
 snippet react
-	import React, { Component, PropTypes } from 'react';
+	import React, { Component } from 'react';
+	import PropTypes from 'prop-types';
 	import { connect } from 'react-redux';
 	
 	class ${1:component_name} extends Component {
@@ -79,7 +85,8 @@ snippet react
 	export default connect()(${3:$1});
 
 snippet reactf
-	import React, { PropTypes } from 'react';
+	import React from 'react';
+	import PropTypes from 'prop-types';
 
 	const ${1:component_name} = (props) =>
 	(
@@ -90,10 +97,11 @@ snippet reactf
 	${2:$1}.propTypes = {
 	};
 
-	export default ${2:$1}
+	export default ${2:$1};
 
 snippet reactfun
-	import React, { PropTypes } from 'react';
+	import React from 'react';
+	import PropTypes from 'prop-types';
 
 	const ${1:component_name} = (props) => {
 		return (
@@ -103,21 +111,21 @@ snippet reactfun
 	${2:$1}.propTypes = {
 	};
 
-	export default ${3:$1}
+	export default ${3:$1};
 
 snippet reducer
-	import {${1:action_name}_ACTION } from '../constants';
+	import {${1:action_name}_ACTION } from '../${2:ActionTypes}';
 
 	const initialState = {
 	};
 
 	export default (state = initialState, action) => {
 		const payload = action.payload;
-		if (action.type === ${2:$1}_ACTION && payload) {
+		if (action.type === ${3:$1}_ACTION && payload) {
 			return { ...state, ...payload };
 		}
 		return state;
-	}
+	};
 
 # sync action
 snippet action
@@ -129,4 +137,3 @@ snippet aaction
 		const ${3}State = getState().${4};
 		return dispatch(${5});
 	};
-
