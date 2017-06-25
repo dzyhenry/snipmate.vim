@@ -47,6 +47,8 @@ snippet info
 	console.info(${1});
 snippet err
 	console.error(${1});
+snippet warn
+	console.warn(${1});
 # Comments
 snippet **
 	/**
@@ -106,7 +108,7 @@ snippet reactfun
 	const ${1:component_name} = (props) => {
 		return (
 		);
-	}
+	};
 
 	${2:$1}.propTypes = {
 	};
@@ -120,8 +122,8 @@ snippet reducer
 	};
 
 	export default (state = initialState, action) => {
-		const payload = action.payload;
-		if (action.type === ${3:$1}_ACTION && payload) {
+		const { type, payload } = action;
+		if (type === ${3:$1}_ACTION && payload) {
 			return { ...state, ...payload };
 		}
 		return state;
